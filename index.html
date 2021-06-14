@@ -5,34 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous"/>
 </head>
 <body>
-    <div id="player" style="position: absolute; top: -9999px; left: -9999px;"></div>
-    <div id="info">loading...</div>
-    <script src="http://www.youtube.com/player_api"></script>
-    <script>
-    var info = document.getElementById('info');
-    function onYouTubePlayerAPIReady() {
-      var player = new YT.Player('player', {
-          videoId: 'gzeOWnnSNjg', // this is the id of the video at youtube (the stuff after "?v=")
-          loop: true,
-          events: {
-              onReady: function (e) {
-                  info.innerHTML = 'video is loaded';
-                  e.target.playVideo();
-              },
-              onStateChange: function (event) {
-                  if (event.data === 1) {
-                      info.innerHTML = 'video started playing';
-                  }
-              }
-          }
-      });
-      // you can do more stuff with the player variable
-    }
-    </script>
-    </body>
-
-<script src = "assets/js/script.js"></script>
+    <div class="container">
+    <section class="hero">
+        <div class="hero body">
+            <p class="title"style = "margin-top: 10px">
+                My JukeBox
+                <img src="jukeBoxImg1.jpeg" style = "width: 50px;height: 50px;padding-top: 10px;">
+            </p>
+            </div>
+        </section>
+        <div class="columns">
+            <div class="column is-half">
+                <div class="container" style = "float: left; width: 100%; height: 100%;">
+                    <div class="notification is-primary">
+                        <strong><figure>
+                            <img src="jukeBoxImg1.jpeg">
+                        </figure></strong> .
+                    </div>
+                </div>
+            </div>
+            <div class="column is-one-fifth">
+                <figure class="image is-128x128" style = "float: right;">
+                    <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                </figure>
+            </div>
+            <div class="column">
+                <p>Song lryics</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
