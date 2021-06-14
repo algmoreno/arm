@@ -20,6 +20,7 @@ var searchArtist = function () {
 }
 
 var displayArtist = function (artistData) {
+    middleColumn.innerHTML = "";
     console.log(artistData); 
 
     var artistNameBox = document.createElement("div");
@@ -37,11 +38,13 @@ var displayArtist = function (artistData) {
 
     for (var i = 0; i < 10; i++) {
     topTenLi = document.createElement("li");
-    topTenLi.textContent = 
+    topTenLi.textContent = artistData.data[i].title;  
     topTenLi.className = "top-ten-list";
-
+    topTenBoxUl.append(topTenLi); 
     }
 
+    topTenBox.append(topTenBoxUl);
+    console.log(topTenBoxUl)
 
     middleColumn.append(imageArea);
     middleColumn.append(artistNameBox);
