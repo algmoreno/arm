@@ -56,16 +56,27 @@ var displayArtist = function (artistData) {
     saveButton = document.createElement("button");
     saveButton.className = "save-button";
     topTenLi.append(saveButton); 
+
+    saveButton.addEventListener("click", function(event){saveSong(event.target.parentElement.textContent)}); 
     }
 
+
     topTenBox.append(topTenOl);
-    console.log(topTenOl)
 
     middleColumn.append(image);
     middleColumn.append(artistNameBox);
     middleColumn.append(topTenBox)
 }
 
+var saveSong = function(song) {
+    var savedSong = song; 
+    var songArr = []; 
+
+    for(var i=0; i<100000; i++) {
+    songArr[i].localStorage.setItem("song", JSON.stringify(savedSong)); 
+    }
+}
 
 
 searchButton.addEventListener("click", searchArtist); 
+
