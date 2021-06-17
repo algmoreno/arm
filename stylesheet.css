@@ -1,6 +1,59 @@
-.juke-box-input {
-    position: absolute;
-    top: 44%;
-    left: 27%;
-    max-width: 43%;
-  }
+.search-bar {
+  width: 250px;
+  height: 25px;
+  border-radius: 8px;
+}
+
+.search-button {
+  width: 25px;
+  height: 25px;
+}
+
+.middle-column {
+  justify-content: center;
+}
+
+.artist-image {
+  border-style: double;
+  border-width: 5px;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  margin: 0 0 0 25px;
+  justify-content: center;
+}
+
+.artist-name-box {
+  height: 45px;
+  width: 200px;
+  background-color: rgb(53, 53, 243);
+  text-align: center;
+  margin: 0 auto 0 auto;
+}
+
+.artist-name {
+  font-size: 24px;
+  color: white;
+  margin: 5px auto 0 auto;
+}
+
+.top-ten-box {
+  height: 415px;
+  width: 100%;
+  background-color: wheat;
+  overflow: auto;
+}
+
+.top-ten-heading {
+  text-decoration: underline 2px;
+  text-align: center;
+}
+
+.top-ten-ol {
+  margin: 10px 0 0 30px;
+}
+
+.top-ten-li {
+  margin: 10px 0 0 0;
+  cursor: pointer;
+}
