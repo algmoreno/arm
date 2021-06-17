@@ -1,6 +1,7 @@
 var searchBar = document.querySelector("#searchBar");
 var searchButton = document.querySelector("#searchButton");
 var middleColumn = document.querySelector("#middleColumn");
+var favoritesContainer = document.querySelector("#favoritesContainer")
 var topTenLi; 
 var saveButton; 
 
@@ -60,7 +61,6 @@ var displayArtist = function (artistData) {
     saveButton.addEventListener("click", function(event){saveSong(event.target.parentElement.textContent)}); 
     }
 
-
     topTenBox.append(topTenOl);
 
     middleColumn.append(image);
@@ -69,14 +69,18 @@ var displayArtist = function (artistData) {
 }
 
 var saveSong = function(song) {
-    var savedSong = song; 
-    var songArr = []; 
 
-    for(var i=0; i<100000; i++) {
-    songArr[i].localStorage.setItem("song", JSON.stringify(savedSong)); 
+    favoriteSong = document.createElement("h3");
+    favoriteSong.className = "favorite-song-text"
+    favoriteSong.textContent = (song);
+
+    for(var i=0; i<2; i++ ) {
+    localStorage.setItem([i], JSON.stringify(song)); 
     }
-}
 
+    favoritesContainer.append(favoriteSong);
+
+}
 
 searchButton.addEventListener("click", searchArtist); 
 

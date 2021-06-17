@@ -1,21 +1,64 @@
+.body {
+    background-color: black;
+}
+
+.title {
+    color: white;
+}
 .columns {
-    margin: 0 0 0 -100px;
+    margin: 0 0 0 -200px;
+    width: 100%;
 }
 
 .jukebox-container {
     justify-content: center;
     text-align: center;
+    width: 400px;
 }
+
+.jukebox{
+    border-radius: 4px;
+    margin: 0 0 0 100px;
+}
+
 .search-bar {
     width: 250px;
     height: 25px; 
     border-radius: 8px;
+    margin-left: 100px;
 }
 
 .search-button {
-    width: 25px;
+    width: 45px;
     height: 25px;
+    margin: 0 0 0 0;
 }
+
+.favorites-container {
+    height: 300px;
+    background-color: rgb(84, 230, 193);
+    overflow: auto;
+    border-radius: 4px;
+}
+
+.favorites-heading-box {
+    background-color: black;
+    position: sticky;
+
+}
+.favorites-heading {
+    font-size: 20px;
+    color: white;
+}
+
+.favorite-song-text {
+    margin: 3px 0 0 5px;
+}
+
+.favorite-song-text:nth-child(odd) {
+    background-color: rgb(94, 252, 212);
+}
+
 
 .middle-column {
     justify-content: center;
@@ -24,23 +67,25 @@
 .artist-image {
     border-style: double;
     border-width: 5px;
-    border-radius: 100px;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 0 auto;
+    border-radius: 150px;
+    border-color: white;
+    width: 300px;
+    height: 300px;
+    margin: 0 0 0 30px;
     justify-content: center;
 }
 
 .artist-name-box {
     height: 45px;
-    width: 200px;
-    background-color: rgb(53, 53, 243);
+    width: 360px;
+    background-color: rgb(0, 0, 0);
     text-align: center;
-    margin: 0 50px 0 0;
+    margin: 0 auto 15px auto;
+    border-radius: 4px;
 }
 
 .artist-name {
-    font-size: 24px;
+    font-size: 34px;
     color: white;
     margin: 5px auto 0 auto;
 }
@@ -48,8 +93,9 @@
 .top-ten-box {
     height: 415px;
     width: 100%;
-    background-color: wheat;
+    background-color: rgb(255, 255, 255);
     overflow: auto;
+    border-radius: 4px;
 }
 
 .top-ten-heading {
@@ -66,8 +112,7 @@
 }
 
 .top-ten-li:nth-child(odd) {
-    background-color: rgb(253, 200, 103);
-
+    background-color: rgb(244, 253, 255);
 }
 
 .save-button {
@@ -75,8 +120,12 @@
     width: 25px;
     float: right;
     margin: 2px 2px 0 0; 
-    background-color: rgb(10, 255, 51);
+    background-color: rgb(150, 208, 223);
     border-radius: 4px;
+}
+
+.save-button:focus {
+    background-color:rgb(238, 238, 255);
 }
 
 .save-button:hover {
@@ -86,4 +135,11 @@
 .lyrics-column {
     text-align: center;
     background-color: rgb(253, 198, 189);
+    height: 810px;
+    width: 600px;
+    border-radius: 4px;
+}
+
+.lyrics-header {
+    font-size: 30px;
 }
