@@ -4,6 +4,40 @@ var searchButton = document.querySelector("#searchButton");
 var middleColumn = document.querySelector("#middleColumn");
 var topTenLi; 
 
+// fetch random images for JukeBox backgound
+var getBgImage = function() {
+
+function getRandomID(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  
+  console.log(getRandomID(0, 22))
+  var id = getRandomID(0, 20);
+  console.log(id)
+  fetch(
+   'https://pixabay.com/api/?key=22067836-edc999cde81df27042e207bfa&q=fractals&category=backgrounds&image_type=illustration'
+  )
+  //convert response to JSON
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(response) {
+    // use querySelctor to display ID
+   var bgimg = response.hits[id].webformatURL
+   console.log ("Pic URL is: " + bgimg)
+    var responseContainerEl = document.querySelector('.section-bg').style.background="url(bgimg)";
+    responseContainerEl.innerHTML = '';
+    // Create an '<img>' element
+    var gifImg = document.createElement('img');
+    // Set that element's 'src' attribute to the 'image_url' from our Giphy API response
+    gifImg.setAttribute('src', response.hits[id].webformatURL);
+    console.log(gifImg);
+    // Append the '<img>' element to the page
+    responseContainerEl.appendChild(gifImg);
+
+  });
+}
+
 var fetchMusic = function(artist) {
     fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${artist}`)
     .then(function(response) {
@@ -60,6 +94,18 @@ var displayArtist = function (artistData) {
     middleColumn.append(image);
     middleColumn.append(artistNameBox);
     middleColumn.append(topTenBox)
+
+
+    var fetchLyrics = function(slyrics) {
+        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${artist}`)
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(data){
+            displayArtist(data); 
+        })
+    }
+    
 }
 
 searchButton.addEventListener("click", searchArtist); 

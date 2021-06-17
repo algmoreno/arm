@@ -11,40 +11,51 @@
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"crossorigin="anonymous"/>
     <link rel = "stylesheet" href = "./assets/css/stylesheet.css"> 
+
 </head>
 <body>
-    <div class="container">
-    <section class="hero">
-        <div class="hero body">
-            <p class="title"style = "margin-top: 10px">
-                My JukeBox
-                <img src="./assets/images/jukeBoxImg1.jpeg" style = "width: 50px;height: 50px;padding-top: 10px;">
-            </p>
-            </div>
-        </section>
-        <div class="columns">
-            <div class="column is-half">
-                <div class="container" style = "float: left; width: 100%; height: 100%;">
-                    <div class="notification is-primary">
-                        <strong><figure>
-                            <img src="./assets/images/jukeBoxImg1.jpeg" id ="jukeboxImage"> 
-                            <input class = "search-bar" id = "searchBar" placeholder="Search an artist . . . "></input> 
-                            <button class = "search-button" id= "searchButton"></button>
-                        </img> 
-                        </figure></strong> 
-                    </div>
+    <section class="hero is-small is-primary">
+        <div class="hero-body">
+            <div class="hero body">
+                <p class="title"style = "margin-top: 10px">
+                    My JukeBox
+                    <img src="./assets/images/jukeBoxImg1.jpeg" style = "width: 50px;height: 50px;padding-top: 10px;">
+                </p>
                 </div>
-            </div>
-            <div class="column is-one-fifth middle-column" id="middleColumn" >
-                <figure class="image is-128x128 image-area" id = "imageArea" style = "float: right;">
-                    
-                </figure>
-            </div>
-            <div class="column">
-                <p>Song lyrics</p>
-            </div>
         </div>
-    </div>
+      </section>
+      <div class="columns is-mobile">
+        <div class="column is-2">
+          User history songs Colunm
+        </div>
+        <div class="column is-3" id="sectionBg">
+            <div class="section-bg" >
+            <div class="notification-is-primary" >
+                <strong><figure class="jukebox" id="jukebox" style="">
+                    <img src="./assets/images/jukeBoxImg1.png" id ="jukeboxImage" > 
+                    <input class = "search-bar" id = "searchBar" placeholder="Search an artist . . . "></input> 
+                    <button class = "search-button" id= "searchButton"></button>
+                </img> 
+                </figure></strong> 
+            </div>
+            <div>
+                <input id="findbg" type="button" value="Set background" onclick="getBgImage();"/>
+            </div>  
+        </div>
+        </div>
+        <div class="column is-3" id="middleColumn">
+            <figure class="image is-128x128 image-area" id = "imageArea" style = "float: right;">
+                    
+            </figure>
+        </div>
+        <div class="column is-2" id="ArtistLyrics">
+            Song lyrics
+            <div>
+                <input id="findbg" type="button" value="Get Lyrics" onclick="getLyrics();"/>
+            </div> 
+        </div>
+      </div>
+ 
 <script src = "./assets/js/script.js"></script> 
 </body>
 </html>
