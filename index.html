@@ -26,8 +26,8 @@
             <div class="column is-half">
                 <div class="container" style = "float: left; width: 100%; height: 100%;">
                     <div class="notification is-primary">
-                        <strong><figure class = "jukebox-container">
-                            <img class ="jukebox" src="./assets/images/jukeBoxImg1.jpeg" id ="jukeboxImage"> 
+                        <strong><figure>
+                            <img src="./assets/images/jukeBoxImg1.jpeg" id ="jukeboxImage"> 
                             <input class = "search-bar" id = "searchBar" placeholder="Search an artist . . . "></input> 
                             <button class = "search-button" id= "searchButton"></button>
                         </img> 
@@ -44,9 +44,14 @@
                 <figure class="image is-128x128 image-area" id = "imageArea" style = "float: right;">
                 </figure>
             </div>
-            <div class="column lyrics-column">
-                <p class ="lyrics-header">Lyrics</p>
+            <div class="column is-one-fifth middle-column" id="middleColumn" >
+                <figure class="image is-128x128 image-area" id = "imageArea" style = "float: right;">
+                </figure>
             </div>
+            <div class="column music-column">
+                <iframe id="deezer-widget" src="" width="700" height="1000" allowtransparency="true" allowfullscreen="true" allow="encrypted-media"></iframe>
+            </div>
+            
         </div>
     </div>
 <script src = "./assets/js/script.js"></script> 

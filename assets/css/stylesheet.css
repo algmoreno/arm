@@ -131,15 +131,3 @@
 .save-button:hover {
     transform: scale(.95);
 }
-
-.lyrics-column {
-    text-align: center;
-    background-color: rgb(253, 198, 189);
-    height: 810px;
-    width: 600px;
-    border-radius: 4px;
-}
-
-.lyrics-header {
-    font-size: 30px;
-}
