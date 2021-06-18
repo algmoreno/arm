@@ -26,16 +26,7 @@ function getRandomID(min, max) {
     // use querySelctor to display ID
    var bgimg = response.hits[id].webformatURL
    console.log ("Pic URL is: " + bgimg)
-    var responseContainerEl = document.querySelector('.section-bg').style.background="url(" + bgimg + ")";
-    // `url(${bgimg})`
-    responseContainerEl.innerHTML = '';
-    // Create an '<img>' element
-    var gifImg = document.createElement('img');
-    // Set that element's 'src' attribute to the 'image_url' from our Giphy API response
-    gifImg.setAttribute('src', response.hits[id].webformatURL);
-    console.log(gifImg);
-    // Append the '<img>' element to the page
-    responseContainerEl.appendChild(gifImg);
+    var responseContainerEl = document.querySelector('.section-bg').style.background="url(" + bgimg + ") no-repeat";
 
   });
 }
