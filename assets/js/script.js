@@ -25,7 +25,8 @@ function getRandomID(min, max) {
     // use querySelctor to display ID
    var bgimg = response.hits[id].webformatURL
    console.log ("Pic URL is: " + bgimg)
-    var responseContainerEl = document.querySelector('.section-bg').style.background="url(https://pixabay.com/get/g3a1129c5d431a8cac9551902f0e10bd190a31048d9ba9856c17e5a560d2b02e6d2174ef9d03edd5d42d1a9539d95c34f18284bd2d36d63ff393062e612e109b7_640.jpg)";
+    var responseContainerEl = document.querySelector('.section-bg').style.background="url(" + bgimg + ")";
+    // `url(${bgimg})`
     responseContainerEl.innerHTML = '';
     // Create an '<img>' element
     var gifImg = document.createElement('img');

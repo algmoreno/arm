@@ -58,5 +58,5 @@
 }
 
 .section-bg {
-   background:url(getBgImage()) center;
+   background:url(../images/testbg.png) center;
 }
