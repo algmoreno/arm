@@ -16,7 +16,7 @@
     color: white;
 }
 .columns {
-    margin: 0 0 0 -200px;
+    margin: 0 0 0 20px;
     width: 100%;
 }
 
@@ -46,8 +46,8 @@
 
 .favorites-container {
     height: 300px;
-    background-color: rgb(84, 230, 193);
-    overflow: auto;
+    background-color: rgb(215, 217, 218);
+   /* overflow: auto; **/
     border-radius: 4px;
 }
 
