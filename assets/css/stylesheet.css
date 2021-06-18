@@ -1,15 +1,15 @@
-:root {
-
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
+  .hero {
+    background: black url(../images/testbg.PNG) center / cover ;
+}
 
-.body {
+.main1 {
     background-color: black;
+    background: url(../images/body_bg.jpg) center / cover;
 }
 
 .title {
