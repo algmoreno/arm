@@ -16,7 +16,7 @@ function getRandomID(min, max) {
   var id = getRandomID(0, 20);
   console.log(id)
   fetch(
-   'https://pixabay.com/api/?key=22067836-edc999cde81df27042e207bfa&q=fractals&category=backgrounds&image_type=illustration'
+   'https://pixabay.com/api/?key=22067836-edc999cde81df27042e207bfa&q=music&category=backgrounds&image_type=illustration$orientation=horizontal'
   )
   //convert response to JSON
   .then(function(response) {
@@ -24,9 +24,9 @@ function getRandomID(min, max) {
   })
   .then(function(response) {
     // use querySelctor to display ID
-   var bgimg = response.hits[id].webformatURL
+   var bgimg = response.hits[id].largeImageURL
    console.log ("Pic URL is: " + bgimg)
-    var responseContainerEl = document.querySelector('.section-bg').style.background="url(" + bgimg + ") no-repeat";
+    var responseContainerEl = document.querySelector('.hero').style.background="url(" + bgimg + ") no-repeat";
 
   });
 }
