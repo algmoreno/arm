@@ -34,6 +34,7 @@ var displayArtist = function (artistData) {
     var artist = document.createElement("h2"); 
     artist.textContent = artistData.data[0].artist.name; 
     artist.className= "artist-name"; 
+    artist.id = "artistName"
     artistNameBox.append(artist);
 
     var topTenBox = document.createElement("div");
@@ -58,7 +59,7 @@ var displayArtist = function (artistData) {
     saveButton.className = "save-button";
     topTenLi.append(saveButton); 
 
-    saveButton.addEventListener("click", function(event){saveSong(event.target.parentElement.textContent)}); 
+    saveButton.addEventListener("click", function(event){saveSong(event.target.parentElement.textContent, artist)}); 
     }
 
     topTenBox.append(topTenOl);
@@ -68,19 +69,24 @@ var displayArtist = function (artistData) {
     middleColumn.append(topTenBox)
 }
 
-var saveSong = function(song) {
+var saveSong = function(song, artist) {
+
+    var artistName = artist.textContent;
 
     favoriteSong = document.createElement("h3");
     favoriteSong.className = "favorite-song-text"
-    favoriteSong.textContent = (song);
+    favoriteSong.textContent = song + " - " +  artistName; 
 
-    for(var i=0; i<2; i++ ) {
-    localStorage.setItem([i], JSON.stringify(song)); 
-    }
+
+    localStorage.setItem("song", JSON.stringify(song)); 
+
 
     favoritesContainer.append(favoriteSong);
+    
 
+    console.log(favoritesContainer.children[0].textContent)
 }
+
 
 searchButton.addEventListener("click", searchArtist); 
 
