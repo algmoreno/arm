@@ -32,7 +32,7 @@ function getRandomID(min, max) {
 }
 
 // this is the widget src atrrtibute prefix/suffix of the iframe src
-const widgetSrcPrefix = 'https://widget.deezer.com/widget/dark/album/';
+const widgetSrcPrefix = 'https://widget.deezer.com/widget/dark/track/';
 const widgetSrcSuffix =
   '?app_id=457142&autoplay=false&radius=true&tracklist=true';
 
@@ -40,7 +40,7 @@ const widgetSrcSuffix =
 // const apiURL = `https://api.deezer.com/search?q=${artist}`;
 
 var fetchMusic = function (artist) {
-  fetch(`https://api.deezer.com/search?q=${artist}`)
+  fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${artist}`)
     .then(function (response) {
       return response.json();
     })
