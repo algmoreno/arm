@@ -9,7 +9,8 @@
   left: 0;
 }
 
-.main1 {
+.main {
+  height: auto;
   background-color: black;
   background: url(../images/body_bg.jpg) center / cover;
 }

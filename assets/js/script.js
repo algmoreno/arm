@@ -32,19 +32,27 @@ function getRandomID(min, max) {
 }
 
 // this is the widget src atrrtibute prefix/suffix of the iframe src
+/* Austin code */
+/*
+const widgetSrcPrefix = 'https://widget.deezer.com/widget/dark/artist/';
+*/
+/* my way */
 const widgetSrcPrefix = 'https://widget.deezer.com/widget/dark/track/';
 const widgetSrcSuffix =
-  '?app_id=457142&autoplay=false&radius=true&tracklist=true';
+  '?app_id=457142&autoplay=true&radius=true&tracklist=true';
+
 
 // const apiURL = `https://api.deezer.com/user/2529`;
 // const apiURL = `https://api.deezer.com/search?q=${artist}`;
 
+/* add cors herokuapp link in this fetch*/
 var fetchMusic = function (artist) {
   fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${artist}`)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+    
       displayArtist(data);
     });
 };
@@ -84,7 +92,8 @@ var displayArtist = function (artistData) {
 
   for (var i = 0; i < 10; i++) {
     topTenLi = document.createElement('li');
-    topTenLi.id = artistData.data[i].album.id;
+    /* Robert - I change from data[i].album.id to data[i].id */
+    topTenLi.id = artistData.data[i].id;
 
     topTenLi.textContent = artistData.data[i].title;
     topTenLi.className = 'top-ten-li';
