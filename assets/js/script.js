@@ -68,20 +68,17 @@ var displayArtist = function (artistData) {
     saveButton = document.createElement("button");
     saveButton.className = "save-button";
 
-    // plusSign = document.createElement("span");
-    // plusSign.className = "oi oi-plus plus-sign";
 
-    // saveButton.append(plusSign);
     topTenLi.append(saveButton); 
 
     
     saveButton.addEventListener("click", function(event){saveSong(event.target.parentElement.textContent, artist)}); 
 
-    // topTenLi.addEventListener('click', function (event) {
-    //   console.log(event.path[0].id);
-    //   document.getElementById('deezer-widget').src =
-    //     widgetSrcPrefix + event.path[0].id + widgetSrcSuffix;
-    // });
+    topTenLi.addEventListener('click', function (event) {
+      console.log(event.path[0].id);
+      document.getElementById('deezer-widget').src =
+        widgetSrcPrefix + event.path[0].id + widgetSrcSuffix;
+    });
   }
 
   topTenBox.append(topTenOl);
@@ -97,11 +94,14 @@ var saveSong = function(song, artist) {
 
     var songArr = JSON.parse(localStorage.getItem("playlist")) || []; 
     var check = songArr.includes(song + " - " +  artistName)
+        
         if (!check) {
     
     favoriteSong = document.createElement("h3");
     favoriteSong.className = "favorite-song-text"
     favoriteSong.textContent = song + " - " +  artistName; 
+
+    
 
     songArr.push(favoriteSong.textContent);
     localStorage.setItem("playlist", JSON.stringify(songArr));  
@@ -110,7 +110,9 @@ var saveSong = function(song, artist) {
     
     }
 
-    else 
+    else {
+        alert("This song is already in your playlist!");
+    }
     // console.log(favoritesContainer.children[0].textContent)
 }
 
@@ -121,6 +123,8 @@ for(var i=0; i<songArr.length; i++) {
     favoriteSong.textContent = songArr[i]; 
 
     favoritesContainer.append(favoriteSong);
-}
+
+}   
+    
 
 searchButton.addEventListener('click', searchArtist);
