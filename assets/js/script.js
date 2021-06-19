@@ -1,3 +1,5 @@
+
+
 var searchBar = document.querySelector("#searchBar");
 var searchButton = document.querySelector("#searchButton");
 var middleColumn = document.querySelector("#middleColumn");
@@ -120,37 +122,50 @@ var displayArtist = function (artistData) {
 };
 
 var saveSong = function(song, artist) {
+    
+    var artistName = artist.textContent;  
 
-    var artistName = artist.textContent;
-
+    var songArr = JSON.parse(localStorage.getItem("playlist")) || []; 
+    var check = songArr.includes(song + " - " +  artistName)
+        
+        if (!check) {
+    
     favoriteSong = document.createElement("h3");
     favoriteSong.className = "favorite-song-text"
     favoriteSong.textContent = song + " - " +  artistName; 
 
+    
 
-    localStorage.setItem("song", JSON.stringify(song)); 
-
+    songArr.push(favoriteSong.textContent);
+    localStorage.setItem("playlist", JSON.stringify(songArr));  
 
     favoritesContainer.append(favoriteSong);
     
-
-    middleColumn.append(image);
-    middleColumn.append(artistNameBox);
-    middleColumn.append(topTenBox)
-
-
-    var fetchLyrics = function(slyrics) {
-        fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${artist}`)
-        .then(function(response) {
-            return response.json()
-        })
-        .then(function(data){
-            displayArtist(data); 
-        })
     }
-    
-    console.log(favoritesContainer.children[0].textContent)
+
+    else {
+        alert("This song is already in your playlist!");
+    }
 }
+
+var songArr = JSON.parse(localStorage.getItem("playlist")) || []; 
+for(var i=0; i<songArr.length; i++) {
+    var favoriteSong = document.createElement("h3");
+    favoriteSong.className = "favorite-song-text"
+    favoriteSong.textContent = songArr[i]; 
+
+    favoritesContainer.append(favoriteSong);
+
+}   
 
 searchButton.addEventListener('click', searchArtist);
 
+var fetchLyrics = function(slyrics) {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${artist}`)
+    .then(function(response) {
+        return response.json()
+    })
+    .then(function(data){
+        displayArtist(data); 
+    })
+}

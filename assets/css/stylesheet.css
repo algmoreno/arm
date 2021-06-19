@@ -121,6 +121,11 @@ body {
   margin: 10px 0 0 0;
 }
 
+.top-ten-li:hover {
+    transform: scale(.99)
+}
+
+
 .top-ten-li:nth-child(odd) {
   background-color: rgb(244, 253, 255);
 }
@@ -134,6 +139,17 @@ body {
   border-radius: 4px;
 }
 
+.save-button:visited {
+    background-color:rgb(238, 238, 255);
+}
+
+.save-button:hover {
+    transform: scale(.95);
+}
+
+.music-column {
+    width: 100px;
+}
 .save-button:focus {
   background-color: rgb(238, 238, 255);
 }
