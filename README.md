@@ -39,7 +39,7 @@
 ![alt text](assets/images/armScreenShot1.JPG "before Search")
 
 ## Project web link
-
+click [here](https://algmoreno.github.io/arm/) to view the deployed site
 
 
 
