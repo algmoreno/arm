@@ -6,7 +6,7 @@
 
 body {
  
-  background: url(../images/body_bg.jpg) center ;
+  background: url(../images/body_bg.jpg) center / cover ;
 }
 
 .hero {
@@ -30,9 +30,10 @@ body {
   width: 400px;
 }
 
-.jukebox {
+.jukebox1 {
   border-radius: 4px;
-  margin: 0 0 0 100px;
+  margin: auto;
+  justify-content: center;
 }
 
 .search-bar {

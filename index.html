@@ -14,7 +14,9 @@
 
 
     <style>
-
+        @media(max-with:fullscreen) {body {background: url(./assets/images/body_bg.jpg) center / cover;} }
+        @media(max-with: 1024px) {body {background: url(./assets/images/body_bg_1024.jpg) center / cover;} }
+        @media(max-with: 768px) {body {background: url(./assets/images/body_bg_768.jpg) center / cover;} }
     </style>
 </head>
 
@@ -33,49 +35,46 @@
         <!-- main section -->
         <section class="main is-fullheight is-fullwidth">
             <!-- Containers -->
-            
-                <div class="columns">
-                    <div class="column is-one-fourth">
-                        <!-- Jukebox column-->
-                        <strong>
-                            <figure>
-                                <img src="./assets/images/jukeBoxImg1.png" style="max-width: 500px" class="py-2 mx-1"
-                                    id="jukeboxImage">
-                                <input class="search-bar" id="searchBar" placeholder="Search an artist . . . ">
-                                <button class="search-button" id="searchButton"></button>
 
-                            </figure>
-                        </strong>
+            <div class="columns is-centered">
+                <!-- Jukebox column-->
+                <div class="column is-one-fourth">
+                    <!-- Jukebox img div-->
+                    <div class="jukebox has-text-centered">
 
-                        <!-- temp button calling fetch for background images-->
-                        <div>
-                            <input id="findbg" type="button" value="Set background" onclick="getBgImage();" />
-                        </div>
-                        <nav class="favorites-heading-box">
-                            <h2 class="favorites-heading">Your Favorites</h2>
-                        </nav>
-                        <div class="favorites-container" id="favoritesContainer">
-                        </div>
+                        <img src="./assets/images/jukeBoxImg1.png">
                     </div>
-                    <div class="column is-one-fourth" id="middleColumn">
-                        <!-- Top 10 Artist songs column-->
-                        <figure class="image is-128x128 image-area" id="imageArea" style="float: right;">
-                        </figure>
+                    <div>
+                        <input class="search-bar" id="searchBar" placeholder="Search an artist . . . ">
                     </div>
+                    <div class="box has-text-centered">
+                        <button class="button is-info is-outlined is-small" id="searchButton">Search for Artist</button>
+                    </div>
+                    <nav class="favorites-heading-box">
+                        <h2 class="favorites-heading">Your Favorites</h2>
+                    </nav>
+                    <div class="favorites-container" id="favoritesContainer">
+                    </div>
+                </div>
+                <div class="column is-one-fourth" id="middleColumn">
+                    <!-- Top 10 Artist songs column-->
+                    <figure class="image is-128x128 image-area" id="imageArea" style="float: right;">
+                    </figure>
+                </div>
 
-                    <div class="column is-one-fourth">
-                        <!-- Deezer play column-->
-                        <div>
+                <div class="column is-one-fourth">
+                    <!-- Deezer play column-->
+                    <div>
                         <iframe id="deezer-widget" src="" width="400px" height="300px" allowtransparency="true"
                             allowfullscreen="true" allow="encrypted-media"></iframe>
-                        </div>
-                        <div class="lyrics">
-                            <p>Lyrics column </p>
-                            <p id="lyrics-text">Lyrics column </p>
-                        </div>    
                     </div>
-                
+                    <div class="lyrics">
+                        <p>Lyrics column </p>
+                        <p id="lyrics-text">Lyrics column </p>
+                    </div>
                 </div>
+
+            </div>
         </section>
     </div>
 
