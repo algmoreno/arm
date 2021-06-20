@@ -2,7 +2,6 @@ var searchBar = document.querySelector("#searchBar");
 var searchButton = document.querySelector("#searchButton");
 var middleColumn = document.querySelector("#middleColumn");
 var favoritesContainer = document.querySelector("#favoritesContainer");
-var LyricsTextEl = document.querySelector("#lyrics-text");
 var topTenLi;
 var saveButton;
 
@@ -95,23 +94,33 @@ var displayArtist = function (artistData) {
 
       document.getElementById("deezer-widget").src =
         widgetSrcPrefix + event.path[0].id + widgetSrcSuffix;
-     
+
       /* fetch lyrics*/
       return fetch(
-          'https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=' + lSong + '&q_artist=' + lArtist + '&apikey=ab9f964c0d824518c1d83446425d15bf'
-        )
-          .then(function (response) {
-            return response.json();
-          })
-          .then(function (lyricsData) {
-            
-            console.log("gde je tekst: " + lyricsData.message.body.lyrics.lyrics_body);
+        "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=" +
+          lSong +
+          "&q_artist=" +
+          lArtist +
+          "&apikey=ab9f964c0d824518c1d83446425d15bf"
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (lyricsData) {
+          /* check if lyrics exist for song*/
+          if (lyricsData.message.body.lyrics.lyrics_body === 0) {
+            console.log("There is no Lyrics for selected song");
+          } else {
+            var LyricsTextEl = document.querySelector("#lyrics-text");
+            console.log(
+              "gde je tekst: " + lyricsData.message.body.lyrics.lyrics_body
+            );
             var searchLyrics = lyricsData.message.body.lyrics.lyrics_body;
-            LyricsTextEl.innerHTML = '';
+            LyricsTextEl.innerHTML = "";
             LyricsTextEl.appendChild(searchLyrics);
-          });
+          }
+        });
     });
-   
   }
 
   topTenBox.append(topTenOl);
