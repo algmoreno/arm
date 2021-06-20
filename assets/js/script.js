@@ -117,7 +117,7 @@ var displayArtist = function (artistData) {
             );
             var searchLyrics = lyricsData.message.body.lyrics.lyrics_body;
             LyricsTextEl.innerHTML = "";
-            LyricsTextEl.appendChild(searchLyrics);
+            LyricsTextEl.append(searchLyrics);
           }
         });
     });
