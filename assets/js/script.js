@@ -82,15 +82,18 @@ var displayArtist = function (artistData) {
     saveButton.addEventListener("click", function (event) {
       saveSong(event.target.parentElement.textContent, artist);
     });
-
+ /* on click event fetch lyrich API and add Artist/Song Name in Lyrics column*/
     topTenLi.addEventListener("click", function (event) {
       console.log("Song id: " + event.path[0].id);
       console.log("Song Artisst: " + event.path[0].songArtist);
+
       var lArtist = event.path[0].songArtist;
-      console.log("Song Artisst: " + lArtist);
-      console.log("Song Name: " + event.path[0].songName);
+      document.getElementById('ArtistName').innerHTML = lArtist;
+      
       var lSong = event.path[0].songName;
-      console.log("var Song Name: " + lSong);
+      document.getElementById('ArtistSong').innerHTML = lSong;
+
+
 
       document.getElementById("deezer-widget").src =
         widgetSrcPrefix + event.path[0].id + widgetSrcSuffix;
@@ -112,12 +115,13 @@ var displayArtist = function (artistData) {
             console.log("There is no Lyrics for selected song");
           } else {
             var LyricsTextEl = document.querySelector("#lyrics-text");
-            console.log(
-              "gde je tekst: " + lyricsData.message.body.lyrics.lyrics_body
-            );
+            
             var searchLyrics = lyricsData.message.body.lyrics.lyrics_body;
+            var formatLyrics = searchLyrics.replace(/(?:\r\n|\r|\n)/g, "<br>")
+            console.log (formatLyrics)
             LyricsTextEl.innerHTML = "";
-            LyricsTextEl.append(searchLyrics);
+            LyricsTextEl.innerHTML = formatLyrics;
+      
           }
         });
     });
@@ -160,29 +164,3 @@ for (var i = 0; i < songArr.length; i++) {
 }
 
 searchButton.addEventListener("click", searchArtist);
-
-// fetch random images for JukeBox backgound
-var getBgImage = function () {
-  function getRandomID(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
-  console.log(getRandomID(0, 22));
-  var id = getRandomID(0, 20);
-  console.log(id);
-  fetch(
-    "https://pixabay.com/api/?key=22067836-edc999cde81df27042e207bfa&q=music&category=backgrounds&image_type=illustration$orientation=horizontal"
-  )
-    //convert response to JSON
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
-      // use querySelctor to display ID
-      var bgimg = response.hits[id].largeImageURL;
-      console.log("Pic URL is: " + bgimg);
-      var responseContainerEl = (document.querySelector(
-        ".hero"
-      ).style.background = "url(" + bgimg + ") no-repeat");
-    });
-};
