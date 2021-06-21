@@ -37,6 +37,7 @@
 
 ## Project screen shots
 ![alt text](assets/images/armScreenShot1.png "before Search")
+![alt text](assets/images/armScreenShot2.png "after Search")
 
 ## Project web link
 click [here](https://algmoreno.github.io/arm/) to view the deployed site
