@@ -162,5 +162,4 @@ for (var i = 0; i < songArr.length; i++) {
 
   favoritesContainer.append(favoriteSong);
 }
-
 searchButton.addEventListener("click", searchArtist);
