@@ -10,21 +10,23 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/stylesheet.css">
-    <!--  <link rel="stylesheet" href="./assets/css/debbuger.css"> -->
+ <!--   <link rel="stylesheet" href="./assets/css/debbuger.css"> -->
 
 
     <style>
-
+        @media(max-with:fullscreen) {body {background: url(./assets/images/body_bg.jpg) center / cover;} }
+        @media(max-with: 1024px) {body {background: url(./assets/images/body_bg_1024.jpg) center / cover;} }
+        @media(max-with: 768px) {body {background: url(./assets/images/body_bg_768.jpg) center / cover;} }
     </style>
 </head>
 
 <body>
-    <div class="container is-fullheight is-fullwidth">
+    <div class="container is-mobile">
         <!-- hero section -->
         <section class="hero" id="logoBgImage">
             <div class="hero-body">
 
-                <img src="./assets/images/logo.png" style="max-width: 1000px;padding-top: 10px;">
+                <img src="./assets/images/logo.png" style="padding-top: 10px;">
             </div>
 
         </section>
@@ -33,48 +35,48 @@
         <!-- main section -->
         <section class="main is-fullheight is-fullwidth">
             <!-- Containers -->
-            
-                <div class="columns">
-                    <div class="column is-one-fourth">
-                        <!-- Jukebox column-->
-                        <strong>
-                            <figure>
-                                <img src="./assets/images/jukeBoxImg1.png" style="max-width: 500px" class="py-2 mx-1"
-                                    id="jukeboxImage">
-                                <input class="search-bar" id="searchBar" placeholder="Search an artist . . . ">
-                                <button class="search-button" id="searchButton"></button>
 
-                            </figure>
-                        </strong>
+            <div class="columns is-centered">
+                <!-- Jukebox column-->
+                <div class="column is-one-third">
+                    <!-- Jukebox img div-->
+                    <div class="jukebox has-text-centered">
 
-                        <!-- temp button calling fetch for background images-->
-                        <div>
-                            <input id="findbg" type="button" value="Set background" onclick="getBgImage();" />
-                        </div>
-                        <nav class="favorites-heading-box">
-                            <h2 class="favorites-heading">Your Favorites</h2>
-                        </nav>
-                        <div class="favorites-container" id="favoritesContainer">
-                        </div>
+                        <img src="./assets/images/jukeBoxImg1.png">
                     </div>
-                    <div class="column is-one-fourth" id="middleColumn">
-                        <!-- Top 10 Artist songs column-->
-                        <figure class="image is-128x128 image-area" id="imageArea" style="float: right;">
-                        </figure>
+                    <div class="has-text-centered">
+                        <input class="search-items" id="searchBar" placeholder="Search an artist . . . ">
                     </div>
-
-                    <div class="column is-one-fourth">
-                        <!-- Deezer play column-->
-                        <div>
-                        <iframe id="deezer-widget" src="" width="400px" height="300px" allowtransparency="true"
-                            allowfullscreen="true" allow="encrypted-media"></iframe>
-                        </div>
-                        <div class="lyrics"> 
-                            <p>Lyrics column </p>
-                        </div>    
+                    <div class="has-text-centered">
+                        <button class="search-button is-" id="searchButton">Search for Artist</button>
                     </div>
-                
+                    <nav class="favorites-heading-box">
+                        <h2 class="favorites-heading">Your Favorites</h2>
+                    </nav>
+                    <div class="favorites-container" id="favoritesContainer">
+                    </div>
                 </div>
+                <div class="column is-one-third" id="middleColumn">
+                    <!-- Top 10 Artist songs column-->
+                    <figure class="image is-128x128 image-area" id="imageArea" style="float: right;">
+                    </figure>
+                </div>
+
+                <div class="column is-one-third">
+                    <!-- Deezer play column-->
+                    <div>
+                        <iframe id="deezer-widget" src="" width="100%" height="300px" allowtransparency="true"
+                            allowfullscreen="true" allow="encrypted-media"></iframe>
+                    </div>
+                    <div class="lyrics">
+                        <h2 id="ArtistName">Artist: </h2>
+                        <h2 id="ArtistSong">Song: </h2>
+
+                        <p id="lyrics-text">Lyrics Text </p>
+                    </div>
+                </div>
+
+            </div>
         </section>
     </div>
 
@@ -84,15 +86,3 @@
 </body>
 
 </html>
-<!--
-    <div class="container is-fullheight">
-    <section class="hero">
-        <div class="hero body ">
-            <p class="title"style = "margin-top: 10px">
-                My JukeBox
-                <img src="./assets/images/jukeBoxImg1.jpeg" style = "width: 50px;height: 50px;padding-top: 10px;">
-            </p>
-            </div>
-        </section>
-       
- -->

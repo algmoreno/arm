@@ -3,22 +3,24 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+ 
+  background: url(../images/body_bg.jpg) center / cover ;
+}
+
 .hero {
   width: 100%;
   top: 0;
   left: 0;
 }
 
-body {
- 
-  background:url(../images/body_bg.jpg) center / cover;
-}
 
 .title {
   color: white;
 }
 .columns {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 0px;
   width: 100%;
 }
 
@@ -28,45 +30,47 @@ body {
   width: 400px;
 }
 
-.jukebox {
-  border-radius: 4px;
-  margin: 0 0 0 100px;
-}
-
-.search-bar {
-  width: 250px;
-  height: 25px;
-  border-radius: 8px;
-  margin-left: 100px;
+.search-items {
+  width: 90%;
+  height: 30px;
+  margin: 10px;
+  border-radius: 8px;   
 }
 
 .search-button {
-  width: 45px;
+  width: 90%;
   height: 25px;
-  margin: 0 0 0 0;
+  margin: 10px;
+  border-radius: 8px;
 }
 
-.favorites-container {
-  height: 300px;
+.favorites-container , .lyrics {
+  
   background-color: rgb(215, 217, 218);
   /* overflow: auto; **/
   border-radius: 4px;
+  border: 3px solid cadetblue;
+
 }
 
-.favorites-heading-box {
+.favorites-heading-box, .top-ten-heading {
   background-color: black;
-  position: sticky;
+
+  text-align: center;
+  border-radius: 4px;
 }
-.favorites-heading {
+.favorites-heading , .top-ten-heading {
   font-size: 20px;
   color: white;
+  text-decoration: underline 2px;
+  text-align: center;
 }
 
 .favorite-song-text {
-  margin: 3px 0 0 5px;
+  margin: 3px 3px 3px 5px;
 }
 
-.favorite-song-text:nth-child(odd) {
+.favorite-song-text:nth-child(odd), .top-ten-li:nth-child(odd) {
   background-color: rgb(94, 252, 212);
 }
 
@@ -103,14 +107,12 @@ body {
 .top-ten-box {
   height: 415px;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(215, 217, 218);
+  /* overflow: auto; **/
+  border-radius: 4px;
+  border: 3px solid cadetblue;
   overflow: auto;
   border-radius: 4px;
-}
-
-.top-ten-heading {
-  text-decoration: underline 2px;
-  text-align: center;
 }
 
 .top-ten-ol {
@@ -121,10 +123,15 @@ body {
   margin: 10px 0 0 0;
 }
 
-.top-ten-li:nth-child(odd) {
-  background-color: rgb(244, 253, 255);
+.top-ten-li:hover {
+    transform: scale(.99)
 }
 
+/**
+.top-ten-li:nth-child(odd) {
+  background-color: rgb(9, 199, 241);
+}
+*/
 .save-button {
   height: 20px;
   width: 25px;
@@ -134,6 +141,17 @@ body {
   border-radius: 4px;
 }
 
+.save-button:visited {
+    background-color:rgb(238, 238, 255);
+}
+
+.save-button:hover {
+    transform: scale(.95);
+}
+
+.music-column {
+    width: 100px;
+}
 .save-button:focus {
   background-color: rgb(238, 238, 255);
 }
